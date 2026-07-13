@@ -1,30 +1,37 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
+import type { Metadata } from "next";
+import { Geist_Mono } from "next/font/google";
 
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { site } from "@/lib/site";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
+import "./globals.css";
 
-const fontMono = Geist_Mono({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-mono",
-})
+  variable: "--font-geist-mono",
+});
+
+export const metadata: Metadata = {
+  title: site.name,
+  description: site.tagline,
+  metadataBase: new URL(site.url),
+  openGraph: {
+    title: site.name,
+    description: site.tagline,
+    type: "website",
+    url: site.url,
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" className={`dark ${geistMono.variable}`}>
+      <body className="bg-background font-mono text-foreground antialiased">
+        {children}
       </body>
     </html>
-  )
+  );
 }
