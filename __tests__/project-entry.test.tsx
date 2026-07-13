@@ -35,10 +35,10 @@ const inDev: Project = {
 
 it("renders the name as a link when href exists", () => {
   render(<ProjectEntry project={shipped} />);
-  expect(screen.getByRole("link", { name: "Capture Studio" })).toHaveAttribute(
-    "href",
-    "https://example.com"
-  );
+  const link = screen.getByRole("link", { name: "Capture Studio" });
+  expect(link).toHaveAttribute("href", "https://example.com");
+  expect(link).toHaveAttribute("target", "_blank");
+  expect(link).toHaveAttribute("rel", "noopener noreferrer");
 });
 
 it("renders plain text name when no href", () => {

@@ -9,6 +9,8 @@ export function ProjectEntry({ project }: { project: Project }) {
         {project.href ? (
           <a
             href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm font-medium underline underline-offset-4 hover:text-muted-foreground"
           >
             {project.name}
@@ -17,7 +19,8 @@ export function ProjectEntry({ project }: { project: Project }) {
           <span className="text-sm font-medium">{project.name}</span>
         )}
         <span className="text-xs text-muted-foreground">
-          — {project.description}
+          <span aria-hidden="true">— </span>
+          {project.description}
         </span>
         {project.status === "in-development" && (
           <Badge variant="outline" className="text-[10px] text-muted-foreground">
