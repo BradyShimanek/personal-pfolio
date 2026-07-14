@@ -3,10 +3,13 @@ import { ProjectEntry } from "@/components/project-entry";
 
 export function ProjectList() {
   return (
-    <section aria-labelledby="projects-heading">
+    <section
+      aria-labelledby="projects-heading"
+      className="mt-16 border-t border-border pt-8"
+    >
       <h2
         id="projects-heading"
-        className="mt-16 text-xs uppercase tracking-widest text-muted-foreground"
+        className="text-xs uppercase tracking-widest text-muted-foreground"
       >
         Projects
       </h2>
