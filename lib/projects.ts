@@ -7,6 +7,7 @@ export interface Project {
   videoUrl?: string;
   href?: string;
   highlights?: string[];
+  note?: string;
 }
 
 export const projects: Project[] = [
@@ -14,6 +15,7 @@ export const projects: Project[] = [
     name: "Capture Studio",
     description: "Sleek screen recording and editing for macOS.",
     status: "shipped",
+    note: "Every demo on this page was recorded and edited with Capture Studio.",
     videoUrl:
       "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/pfolio-capture-studio.mp4",
     highlights: [
@@ -41,5 +43,12 @@ export const projects: Project[] = [
     name: "WebSketch2",
     description: "Sketch and annotate on any website.",
     status: "in-development",
+    videoUrl:
+      "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/portfolio-websketch.mp4",
+    highlights: [
+      "Draw, highlight, and annotate directly on any live webpage.",
+      "Made for design feedback, walkthroughs, and quick demos.",
+      "Chrome extension — one click to start sketching, one to clear.",
+    ],
   },
 ];

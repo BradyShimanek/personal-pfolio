@@ -45,6 +45,11 @@ export function ProjectEntry({ project }: { project: Project }) {
           )}
         </div>
       )}
+      {project.note && (
+        <p className="mt-3 text-xs italic text-muted-foreground">
+          {project.note}
+        </p>
+      )}
     </article>
   );
 }

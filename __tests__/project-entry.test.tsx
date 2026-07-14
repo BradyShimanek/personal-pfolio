@@ -26,6 +26,7 @@ const shipped: Project = {
   videoUrl: "/demo.mp4",
   href: "https://example.com",
   highlights: ["Records your screen.", "Edits itself."],
+  note: "Recorded with itself.",
 };
 
 const inDev: Project = {
@@ -71,6 +72,13 @@ it("renders each highlight when highlights exist", () => {
 it("renders no highlight list when highlights are absent", () => {
   render(<ProjectEntry project={inDev} />);
   expect(screen.queryByRole("list")).toBeNull();
+});
+
+it("renders the note only when one exists", () => {
+  const { rerender } = render(<ProjectEntry project={shipped} />);
+  expect(screen.getByText("Recorded with itself.")).toBeInTheDocument();
+  rerender(<ProjectEntry project={inDev} />);
+  expect(screen.queryByText("Recorded with itself.")).toBeNull();
 });
 
 it("ProjectList renders every project under a Projects heading", () => {
