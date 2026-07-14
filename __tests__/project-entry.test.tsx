@@ -25,6 +25,7 @@ const shipped: Project = {
   status: "shipped",
   videoUrl: "/demo.mp4",
   href: "https://example.com",
+  highlights: ["Records your screen.", "Edits itself."],
 };
 
 const inDev: Project = {
@@ -59,6 +60,17 @@ it("renders a video only when videoUrl exists", () => {
   expect(screen.getByLabelText("Capture Studio demo")).toBeInTheDocument();
   rerender(<ProjectEntry project={inDev} />);
   expect(screen.queryByLabelText(/demo/)).toBeNull();
+});
+
+it("renders each highlight when highlights exist", () => {
+  render(<ProjectEntry project={shipped} />);
+  expect(screen.getByText("Records your screen.")).toBeInTheDocument();
+  expect(screen.getByText("Edits itself.")).toBeInTheDocument();
+});
+
+it("renders no highlight list when highlights are absent", () => {
+  render(<ProjectEntry project={inDev} />);
+  expect(screen.queryByRole("list")).toBeNull();
 });
 
 it("ProjectList renders every project under a Projects heading", () => {

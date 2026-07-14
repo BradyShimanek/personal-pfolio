@@ -8,11 +8,11 @@ export function About() {
     >
       <h2
         id="about-heading"
-        className="text-xs uppercase tracking-widest text-muted-foreground"
+        className="text-xs font-medium uppercase tracking-widest text-foreground/70"
       >
         About
       </h2>
-      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+      <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
         {site.bio}
       </p>
     </section>

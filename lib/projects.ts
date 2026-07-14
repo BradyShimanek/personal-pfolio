@@ -6,15 +6,22 @@ export interface Project {
   status: ProjectStatus;
   videoUrl?: string;
   href?: string;
+  highlights?: string[];
 }
 
 export const projects: Project[] = [
   {
     name: "Capture Studio",
-    description: "Screen recording and editing for macOS.",
+    description: "Sleek screen recording and editing for macOS.",
     status: "shipped",
     videoUrl:
       "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/pfolio-capture-studio.mp4",
+    highlights: [
+      "Captures beautiful, performant recordings of your screen. Perfect for demos, tutorials, and more.",
+      "Automatic, premium edits. Smooth zooms and cuts, no timeline fiddling.",
+      "AI-powered captions with accurate timestamps, generated locally & straight from your voice.",
+      "Native macOS app built with Swift, SwiftUI, and ScreenCaptureKit.",
+    ],
   },
   {
     name: "LC Finance",
@@ -23,6 +30,12 @@ export const projects: Project[] = [
     videoUrl:
       "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/pfolio-lc-finance.mp4",
     href: "https://lc-finance.vercel.app/login",
+    highlights: [
+      "Tracks brand deals from first pitch to final payment.",
+      "Year-to-date revenue at a glance — earned, paid, and outstanding.",
+      "Flags upcoming due dates so no invoice slips through.",
+      "Full-stack web app built with Next.js, TypeScript, and Supabase.",
+    ],
   },
   {
     name: "WebSketch2",

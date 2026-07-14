@@ -9,7 +9,7 @@ export function ProjectList() {
     >
       <h2
         id="projects-heading"
-        className="text-xs uppercase tracking-widest text-muted-foreground"
+        className="text-xs font-medium uppercase tracking-widest text-foreground/70"
       >
         Projects
       </h2>
@@ -17,7 +17,7 @@ export function ProjectList() {
         {projects.map((project) => (
           <li
             key={project.name}
-            className="mt-6 border-t border-border pt-6 first:mt-4 first:border-t-0 first:pt-0"
+            className="mt-10 border-t border-border pt-10 first:mt-6 first:border-t-0 first:pt-0"
           >
             <ProjectEntry project={project} />
           </li>

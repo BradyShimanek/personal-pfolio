@@ -1,13 +1,10 @@
 import { site } from "@/lib/site";
 
-export function SiteHeader() {
+export function SiteFooter() {
   return (
-    <header>
-      <h1 className="text-2xl font-semibold">{site.name}</h1>
-      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-        {site.tagline}
-      </p>
-      <nav className="mt-2 text-sm text-muted-foreground">
+    <footer className="mt-16 flex flex-wrap items-baseline justify-between gap-2 border-t border-border pt-8 text-sm text-muted-foreground">
+      <p>{site.name}</p>
+      <nav>
         <a
           href={site.github}
           target="_blank"
@@ -33,6 +30,6 @@ export function SiteHeader() {
           Email
         </a>
       </nav>
-    </header>
+    </footer>
   );
 }

@@ -11,14 +11,14 @@ export function ProjectEntry({ project }: { project: Project }) {
             href={project.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm font-medium underline underline-offset-4 hover:text-muted-foreground"
+            className="text-base font-semibold underline underline-offset-4 hover:text-muted-foreground"
           >
             {project.name}
           </a>
         ) : (
-          <span className="text-sm font-medium">{project.name}</span>
+          <span className="text-base font-semibold">{project.name}</span>
         )}
-        <span className="text-xs text-muted-foreground">
+        <span className="text-sm text-muted-foreground">
           <span aria-hidden="true">— </span>
           {project.description}
         </span>
@@ -29,8 +29,20 @@ export function ProjectEntry({ project }: { project: Project }) {
         )}
       </div>
       {project.videoUrl && (
-        <div className="mt-3">
-          <DemoVideo src={project.videoUrl} title={project.name} />
+        <div className="mt-4 gap-6 md:flex md:items-start">
+          <div className="md:w-3/5 md:shrink-0">
+            <DemoVideo src={project.videoUrl} title={project.name} />
+          </div>
+          {project.highlights && (
+            <ul className="mt-4 list-none space-y-2.5 p-0 text-sm leading-relaxed text-muted-foreground md:mt-1">
+              {project.highlights.map((highlight) => (
+                <li key={highlight} className="flex gap-2">
+                  <span aria-hidden="true">·</span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       )}
     </article>
