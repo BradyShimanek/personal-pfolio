@@ -8,22 +8,20 @@ export interface Project {
   href?: string;
 }
 
-// Placeholder until real demos are uploaded to Supabase Storage (see README).
-const PLACEHOLDER_VIDEO =
-  "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4";
-
 export const projects: Project[] = [
   {
     name: "Capture Studio",
     description: "Screen recording and editing for macOS.",
     status: "shipped",
-    videoUrl: PLACEHOLDER_VIDEO,
+    videoUrl:
+      "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/pfolio-capture-studio.mp4",
   },
   {
     name: "LC Finance",
     description: "Brand-deal tracking for creators.",
     status: "shipped",
-    videoUrl: PLACEHOLDER_VIDEO,
+    videoUrl:
+      "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/pfolio-lc-finance.mp4",
     href: "https://lc-finance.vercel.app/login",
   },
   {

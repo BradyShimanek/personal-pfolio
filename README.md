@@ -22,15 +22,14 @@ dependency updates.
 
 ## Demo videos (Supabase Storage)
 
-Placeholder video URLs are used until real demos are recorded.
+Demo videos live in a public Supabase Storage bucket (`demos`) and are
+referenced by public URL in `lib/projects.ts`:
 
-1. Create a Supabase project at https://supabase.com/dashboard.
-2. Storage → New bucket → name `demos`, enable **Public bucket**.
-3. Upload `capture-studio.mp4` and `lc-finance.mp4`.
-4. Copy each file's public URL:
-   `https://<project-ref>.supabase.co/storage/v1/object/public/demos/<file>.mp4`
-5. Replace the `videoUrl` values in `lib/projects.ts` and remove
-   `PLACEHOLDER_VIDEO`.
+`https://<project-ref>.supabase.co/storage/v1/object/public/demos/<file>.mp4`
+
+To add or replace a video: upload the file to the `demos` bucket in the
+Supabase dashboard (Storage → demos → Upload files), copy its public URL,
+and set it as the project's `videoUrl` in `lib/projects.ts`.
 
 ### Video export specs
 
