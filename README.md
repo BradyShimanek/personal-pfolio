@@ -1,6 +1,14 @@
-# Personal Portfolio
+# bradyshimanek.dev
 
-Single-page portfolio built with Next.js, React 19, TypeScript, Tailwind CSS, and shadcn/ui.
+My personal portfolio site — a single-page, dark-mode showcase of what I've been
+building. It's got a short intro, a rundown of my projects (each with an inline
+demo video), and a bit about me.
+
+**Live at [bradyshimanek.dev](https://bradyshimanek.dev).**
+
+Built with Next.js, React 19, TypeScript, Tailwind CSS, and shadcn/ui. Content
+(bio, links, project descriptions) lives in plain TypeScript files, and demo
+videos are hosted on Supabase Storage.
 
 ## Development
 
@@ -38,8 +46,5 @@ loop, under ~10 MB (≈4–6 Mbps).
 
 ## Deploy (Vercel)
 
-1. Push this repo to GitHub.
-2. https://vercel.com/new → import the repo → framework auto-detects
-   Next.js → Deploy. No environment variables needed.
-3. Optional: add a custom domain under Project → Settings → Domains, then
-   update `site.url` in `lib/site.ts`.
+Connected to Vercel — every push to `main` auto-deploys to
+[bradyshimanek.dev](https://bradyshimanek.dev).
