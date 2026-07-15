@@ -29,6 +29,15 @@ export function SiteFooter() {
         >
           Email
         </a>
+        {" · "}
+        <a
+        href={site.X}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline underline-offset-4 hover:text-foreground"
+        >
+          X.com
+        </a>
       </nav>
     </footer>
   );
