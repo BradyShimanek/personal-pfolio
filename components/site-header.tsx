@@ -27,6 +27,15 @@ export function SiteHeader() {
         </a>
         {" · "}
         <a
+        href={site.twitter}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline underline-offset-4 hover:text-foreground"
+        >
+        X.com
+        </a>
+        {" · "}
+        <a
           href={`mailto:${site.email}`}
           className="underline underline-offset-4 hover:text-foreground"
         >
