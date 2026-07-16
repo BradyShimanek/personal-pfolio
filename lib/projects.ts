@@ -17,7 +17,7 @@ export const projects: Project[] = [
     status: "shipped",
     note: "Every demo on this page was recorded and edited with Capture Studio.",
     videoUrl:
-      "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/pfolio-capture-studio.mp4",
+      "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/60fpscapturestudioDEMO.mp4",
     highlights: [
       "Captures beautiful, performant recordings of your screen. Perfect for demos, tutorials, and more.",
       "Automatic, premium edits. Smooth zooms and cuts, no timeline fiddling.",
