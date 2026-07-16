@@ -30,7 +30,7 @@ export const projects: Project[] = [
     description: "Brand-deal tracking for creators.",
     status: "shipped",
     videoUrl:
-      "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/pfolio-lc-finance.mp4",
+      "https://qfwfxeljazfhiywlywny.supabase.co/storage/v1/object/public/demos/NEW-pfolio-lc-finance.mp4",
     href: "https://lc-finance.vercel.app/login",
     highlights: [
       "Tracks brand deals from first pitch to final payment.",
