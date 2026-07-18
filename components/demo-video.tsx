@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { DemoVideoModal } from "@/components/demo-video-modal";
 
 interface DemoVideoProps {
   src: string;
@@ -16,6 +17,7 @@ function subscribeToReducedMotion(callback: () => void) {
 }
 
 export function DemoVideo({ src, title }: DemoVideoProps) {
+  const [isOpen, setIsOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
   const reducedMotion = useSyncExternalStore(
     subscribeToReducedMotion,
@@ -29,7 +31,7 @@ export function DemoVideo({ src, title }: DemoVideoProps) {
     if (!video) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !isOpen) {
           video.play().catch(() => {});
         } else {
           video.pause();
@@ -39,19 +41,41 @@ export function DemoVideo({ src, title }: DemoVideoProps) {
     );
     observer.observe(video);
     return () => observer.disconnect();
-  }, [reducedMotion]);
+  }, [reducedMotion, isOpen]);
+
+  function handleOpen() {
+    setIsOpen(true);
+    videoRef.current?.pause();
+  }
 
   return (
-    <video
-      ref={videoRef}
-      src={src}
-      muted
-      loop
-      playsInline
-      preload="none"
-      controls={reducedMotion}
-      aria-label={`${title} demo`}
-      className="w-full rounded-md border border-border"
-    />
+    <>
+      <button
+        type="button"
+        onClick={handleOpen}
+        className="block w-full cursor-pointer p-0 text-left"
+        aria-label={`Expand ${title} demo`}
+      >
+        <video
+          ref={videoRef}
+          src={src}
+          muted
+          loop
+          playsInline
+          preload="none"
+          controls={reducedMotion}
+          aria-label={`${title} demo`}
+          className="w-full rounded-md border border-border"
+        />
+      </button>
+      
+      {isOpen && (
+        <DemoVideoModal 
+          src={src} 
+          title={title} 
+          onClose={() => setIsOpen(false)} 
+        />
+      )}
+    </>
   );
 }
